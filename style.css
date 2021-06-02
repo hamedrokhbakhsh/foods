@@ -1,0 +1,591 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@1&display=swap');
+
+::root {
+    --topMenu: 14rem;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+}
+
+html {
+    font-size: 62%;
+}
+
+
+/* nabar */
+
+.menu {
+    position: fixed;
+    top: 5rem;
+    left: 4rem;
+    width: 4rem;
+    height: 6rem;
+    background-color: black;
+    border-radius: 4rem 4rem 2rem 2rem;
+    z-index: 100;
+    box-shadow: 0.5rem 0.5rem 0.5rem black;
+    transition: top 1s linear;
+
+    cursor: pointer;
+}
+
+.menu.menu-active {
+    top: 18rem;
+}
+
+.menu::before {
+    content: "";
+    height: 20rem;
+    background-color: black;
+    width: 0.7rem;
+    position: absolute;
+    top: -20rem;
+    left: calc(50% - 0.3rem)
+}
+
+
+.navbar {
+    width: 100%;
+    height: 15rem;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    box-shadow: 1rem 1rem 1rem black;
+    top: -14rem;
+    transition: top 1s;
+
+}
+
+.navbar.menu-active {
+    transition: top 1s;
+    top: 0rem;
+}
+
+.navbar-link {
+    color: aquamarine;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3rem;
+    opacity: 0;
+
+}
+
+.menu-active .navbar-link {
+    opacity: 1;
+    transition: opacity 0.5s;
+
+}
+
+.menu-active .navbar-link:nth-child(1) {
+    transition: opacity 0.2s 0.5s;
+}
+
+.menu-active .navbar-link:nth-child(2) {
+    transition: opacity 0.2s 0.6s;
+}
+
+.menu-active .navbar-link:nth-child(3) {
+    transition: opacity 0.2s 0.7s;
+}
+
+.menu-active .navbar-link:nth-child(4) {
+    transition: opacity 0.2s 0.8s;
+}
+
+.menu-active .navbar-link:nth-child(5) {
+    transition: opacity 0.2s 0.9s;
+}
+
+
+.navbar-link:hover {
+    color: white;
+}
+
+a i {
+    font-size: 6rem;
+}
+
+a span {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    letter-spacing: 0.5rem
+}
+
+
+/*end nabar */
+
+
+.section-1 {
+    background-color: #333;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.section-heading {
+    font-weight: 900;
+    color: white;
+    font-size: 12rem;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.5rem;
+    text-shadow: 0.3rem 0.3rem 0.3rem black;
+
+
+}
+
+.section-icons i {
+    font-size: 35rem;
+    color: yellow;
+    position: absolute;
+    transform: translate(-40%, -50%) scale(0);
+    text-shadow: 0.3rem 0.3rem 0.3rem black;
+
+    transition: transform 0.3s;
+
+
+}
+
+.section-icons i.change {
+    transform: translate(-40%, -50%) scale(1);
+    transition: transform 0.3s 0.3s;
+
+}
+
+
+/* section 2 */
+.section-2 {
+    height: 100vh;
+    width: 100%;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10rem 0;
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 30rem;
+    background-color: #a79a2d;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4rem;
+    align-items: center;
+    box-shadow: 1rem 1rem 1rem black;
+    position: relative;
+    transform: skewY(-2deg) rotateY(20deg);
+    transition: all 0.5s;
+
+}
+
+.card:hover {
+    transform: skewY(-2deg) rotateY(20deg) translateY(-3rem);
+    box-shadow: 2rem 2rem 2rem black;
+
+
+}
+
+.card::before {
+    content: "";
+    height: 100%;
+    width: 1rem;
+    background-color: #817824;
+    position: absolute;
+    left: -1rem;
+    top: 0;
+    transform: skewY(45deg);
+    transform-origin: right;
+    box-shadow: -1rem -1rem -1rem black;
+}
+
+.card::after {
+    content: "";
+    height: 1rem;
+    width: 100%;
+    background-color: #817824;
+    position: absolute;
+    left: 0;
+    top: -1rem;
+    transform: skewX(45deg);
+    transform-origin: bottom;
+    box-shadow: -1rem -1rem -1rem black;
+}
+
+
+.card-image {
+    width: 100%;
+}
+
+
+.card-title {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1rem;
+    font-size: 3rem;
+    text-shadow: 0.15rem 0.15rem 0.15rem black;
+    color: #111;
+    margin: 2rem 0;
+}
+
+.card-btn {
+    width: 70%;
+    background-color: #111;
+    color: #888;
+    border-radius: 5rem;
+    border: none;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    padding: 0.5rem;
+    box-shadow: -0.3rem -0.3rem -0.3rem black;
+}
+
+/* section 3*/
+
+.section-3 {
+    background-color: #333;
+    padding: 5rem 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+
+.gallery-link {
+    position: relative;
+
+}
+
+
+.food-name {
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    position: absolute;
+    top: 5%;
+    left: 2rem;
+    font-weight: 900;
+    width: 0;
+    overflow: hidden;
+}
+
+.gallery-link:hover .food-name {
+    width: 100%;
+    transition: width 1.5s 0.5s;
+
+}
+
+.gallery-link {
+    position: relative;
+    margin: 5rem 2rem
+}
+
+.gallery-link::before {
+    content: "";
+    background-color: white;
+    width: 0.2rem;
+    height: 0%;
+    position: absolute;
+    top: 2vw;
+    left: 80%;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.gallery-link:hover::before {
+    height: 70%;
+    transition: all 0.3s;
+
+}
+
+
+.gallery-link::after {
+    content: "";
+    background-color: white;
+    width: 0%;
+    height: 0.1rem;
+    position: absolute;
+    top: 30%;
+    left: 3rem;
+    transition: width 0.3s;
+}
+
+
+.gallery-link:hover::after {
+    width: 80%;
+    transition: width 0.3s;
+
+}
+
+
+.food-description {
+    position: absolute;
+    bottom: 3vw;
+    left: 2rem;
+    font-size: 1rem;
+    width: 70%;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: white;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 1s 1s;
+
+}
+
+.gallery-link:hover .food-description {
+    opacity: 100%;
+    transition: opacity 1s 1s;
+
+}
+
+.food-image {
+    width: 25vw;
+    height: 15vw;
+    object-fit: cover;
+    box-shadow: 0.3rem 0.3rem 0.1rem #e70730, 0.7rem 0.7rem 0.1rem #bee25a, 0.5rem 0.5rem 0.1rem #785fd3, 0.9rem 0.9rem 0.1rem #123245;
+    transition: all 1s;
+}
+
+.gallery-link:hover .food-image {
+    box-shadow: 1rem 1rem 0.1rem #e70730, 2rem 2rem 0.1rem #bee25a, 3rem 3rem 0.1rem #785fd3, 4rem 4rem 0.1rem #123245;
+    transition: all 1s;
+    filter: blur(0.5rem);
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+
+.section-4 {
+    width: 100%;
+    height: 30vh;
+    background-color: #5b1616;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    padding: 4rem 0;
+    align-items: start;
+
+}
+
+.section-4-text {
+    text-transform: uppercase;
+}
+
+
+.section-4-heading {
+    font-size: 4rem;
+    font-weight: 900;
+    color: yellow
+}
+
+
+.section-4-paragraph {
+    color: #854acf;
+    font-size: 1.5rem;
+
+}
+
+.signup-form {
+    display: flex;
+    align-items: center
+}
+
+.input-signup-form {
+    width: 35rem;
+    height: 5rem;
+    padding: 1rem;
+    color: #888888;
+    font-size: 1.5rem;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+.input-signup-form::placeholder {
+    color: #888888;
+    text-transform: capitalize;
+}
+
+.btn-form {
+    position: relative;
+    left: -5rem;
+    height: 4rem;
+    width: 4rem;
+    background-color: #123245;
+    color: #888888;
+    font-size: 1.8rem;
+    cursor: pointer;
+    border: none;
+
+}
+
+.copyright {
+    position: absolute;
+    bottom: 3rem;
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: #eee;
+    letter-spacing: 0.1rem;
+    border-top: 0.2rem solid #888;
+    padding-top: 2rem;
+    width: 100%;
+    text-align: center;
+
+}
+
+
+/* media responsive */
+
+
+@media (max-width: 1400px) {
+    html {
+        font-size: 50%;
+    }
+
+    .section-2 {
+        height: 100vh;
+        padding: 14rem 0 12rem 0;
+    }
+
+    .gallery-link {
+        height: 20rem;
+        width: 40rem;
+        margin5rem
+
+    }
+
+    .food-image {
+        height: 100%;
+        width: 100%
+    }
+}
+
+
+@media (max-width: 1000px) {
+
+
+    .section-heading {
+        font-size: 9rem;
+        margin0 3rem
+    }
+
+    .section-icons {
+        font-size: 25rem
+    }
+
+    .section-2 {
+        height: auto;
+
+    }
+
+    .card-container {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        margin: 5rem
+    }
+
+    .section-4 {
+        height: 30rem;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .navbar-link {
+        margin: 0 2rem;
+    }
+
+    .navbar-link i {
+        font-size: 4rem;
+    }
+
+    .navbar-link span {
+        font-size: 2rem
+    }
+}
+
+@media (max-width: 700px) {
+    .section-heading {
+        font-size: 5rem;
+    }
+
+    .section-icons i {
+        font-size: 15rem
+    }
+
+    .menu {
+        left: 2rem;
+    }
+
+    .section-4 {
+        height: 40rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .section-4-text {
+        margin-bottom: 4rem
+    }
+}
+
+@media (max-width: 600px) {
+    html{
+    font-size: 40%;
+    }
+
+    .navbar-link {
+        margin: 0 0.5rem
+    }
+
+    .navbar-link span {
+        font-size: 1rem
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .navbar-link {
+        margin: 0 0.5rem
+    }
+
+    .navbar-link i {
+        font-size: 3rem
+    }
+
+}
